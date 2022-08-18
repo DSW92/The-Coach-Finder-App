@@ -49,13 +49,15 @@ export default {
       return this.selectedCoach.description;
     },
     contactLink() {
-      return this.$route.path + "/" + this.id + "/contact";
+      // return this.$route.path + "/" + this.id + "/contact";
+      return this.$route.path + "/contact";
     },
   },
   created() {
     this.selectedCoach = this.$store.getters["coaches/coaches"].find(
       (coach) => coach.id === this.id
     );
+    console.log(this.$route.path);
   },
 };
 </script>
